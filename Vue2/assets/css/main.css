@@ -1,0 +1,52 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	display: grid;
+	height: 100%;
+	width: 100%;
+}
+
+#app {
+	margin: auto;
+}
+form * {
+	display: block;
+	margin: 15px 0 15px 0;
+}
+
+textarea {
+	width: 250px;
+	height: 150px;
+}
+
+pre { white-space: pre-line; }
+
+.error {
+	color: red;
+}
+
+button {
+  color: #051923;
+  border: 1px solid #ccc;
+  padding: 5px 15px;
+  margin: 0 10px;
+  border-radius: 4px;
+  outline: 0;
+  cursor: pointer;
+  background-color: white;
+}
+
+button.primary {
+	background-color: blue;
+}
+
+hr {
+  border-color: #F2FAFF;
+  opacity: 0.5;
+}
+.plan { display: block; padding: 5px; }
+
+.plan-name, .plan-price {
+	width: 100px;
+	display: inline-block;
+}

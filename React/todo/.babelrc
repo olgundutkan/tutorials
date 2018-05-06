@@ -1,0 +1,4 @@
+{
+  "presets": ["env", "es2015", "react"],
+  "ignore": ["node_modules", "build"]
+}

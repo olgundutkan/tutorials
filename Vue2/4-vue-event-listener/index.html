@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tutorial | Vue 4</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="name in names" v-text="name"></li>
+        </ul>
+        <input type="text" name="name" v-model="newName" @keyup.enter="addName">
+        <button @click="addName"> Add Name</button>
+    </div>
+    <script type="text/javascript" src="../assets/js/vue.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        Vue.config.devtools = true;
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                newName: "",
+                names: ["Joe", "Mary", "Jhon", "Jack"]
+            },
+            methods: {
+                addName(){
+                    this.names.push(this.newName);
+                    this.newName = "";
+                }
+            }
+        })
+    </script>
+</body>
+</html>

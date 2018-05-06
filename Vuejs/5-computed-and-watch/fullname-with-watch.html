@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vuejs | Lesson 5 Fullname with watch function</title>
+	<link rel="stylesheet" type="text/css" href="../assets/css/main.css">
+</head>
+<body>
+	<div id="app">
+		<h1>{{ fullName }}</h1>
+		<input type="text" name="first-name" v-model="first" placeholder="First Name">
+		<input type="text" name="last-name" v-model="last" placeholder="Last Name">
+	</div>
+
+	<script src="../assets/js/vue.js"></script>
+
+	<script>
+		new Vue({
+			el: '#app',
+
+			data: {
+				first:'Olgun',
+				last: 'DUTKAN',
+				fullName: 'Olgun DUTKAN'
+			},
+			
+			watch: {
+				first: function(first) {
+					this.fullName = first + ' ' + this.last;
+				},
+				last: function(last) {
+					this.fullName = this.first + ' ' + last;
+				}
+			}
+		});
+	</script>
+</body>
+</html>

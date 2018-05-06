@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vuejs | Lesson 5</title>
+	<link rel="stylesheet" type="text/css" href="../assets/css/main.css">
+</head>
+<body>
+	<div id="app">
+		<h1>Skill: {{ skill }}</h1>
+		<input type="text" name="points" v-model="points">
+	</div>
+
+	<script src="../assets/js/vue.js"></script>
+
+	<script>
+		new Vue({
+			el: '#app',
+
+			data: {
+				points:10,
+			},
+			computed: {
+				skill: function() {
+					if (this.points > 100) {
+						return 'Advance';
+					}
+					return 'Beginer'
+				}
+			}
+		});
+	</script>
+</body>
+</html>

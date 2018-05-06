@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tutorial | Vue 5</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
+    <style type="text/css">
+        .color-red{color:red;}
+        .color-blue{color:blue;}
+        .is-loading{color:blue;}
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1 :class="className">Hello World</h1>
+        <button :title="title">Hover Over Me</button>
+        <button :class="{'is-loading' : isLoading}" @click="handler" :disabled="isDisabled">Button</button>
+    </div>
+    <script type="text/javascript" src="../assets/js/vue.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        Vue.config.devtools = true;
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                title: "Lorem ipsum dolor sit amet.",
+                className: "color-red",
+                isLoading: false,
+                isDisabled: false,
+            },
+            methods: {
+                toogleClass() {
+                    this.isLoading = ! this.isLoading;
+                },
+                toogleDisabled() {
+                    this.isDisabled = ! this.isDisabled;
+                },
+                handler() {
+                    this.toogleClass();
+                    this.toogleDisabled();
+                }
+            },
+        })
+    </script>
+</body>
+</html>

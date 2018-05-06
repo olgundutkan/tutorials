@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tutorial | Vue 7</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
+</head>
+<body>
+    <div id="app">
+        <task>Go to the store</task>
+        <task>Go to the bank</task>
+        <task>Go to work</task>
+    </div>
+    <script type="text/javascript" src="../assets/js/vue.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        Vue.config.devtools = true;
+
+        Vue.component('task', {
+            template: '<li><slot></slot></li>'
+        })
+
+        var app = new Vue({
+            el: '#app'
+        })
+    </script>
+</body>
+</html>

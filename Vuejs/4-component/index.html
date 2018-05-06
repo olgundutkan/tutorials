@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vuejs | Lesson 4</title>
+	<link rel="stylesheet" type="text/css" href="../assets/css/main.css">
+</head>
+<body>
+	<div id="app">
+		<counter heading="Like"></counter>
+		<counter heading="Dislike"></counter>
+	</div>
+
+	<template id="counter-template">
+		<h1>{{ heading }}</h1>
+		<button @click="incrementCount">{{ count }}</button>
+	</template>
+
+	<script src="../assets/js/vue.js"></script>
+
+	<script>
+		Vue.component('counter', {
+			template: '#counter-template',
+			data: function () {
+				return { count: 0 };
+			},
+			props: ['heading'],
+			methods: {
+				incrementCount: function() {
+					this.count +=1;
+				},
+				decreaseCount: function() {
+					this.count -=1;
+				}
+			}
+		});
+		new Vue({
+			el: '#app',
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tutorial | Vue 2</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
+</head>
+<body>
+    <div id="app">
+        <h1>{{ message }}</h1>
+        <input type="text" name="message" v-model="message">
+        <pre>
+            {{ $data }}
+        </pre>
+    </div>
+    <script type="text/javascript" src="../assets/js/vue.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        Vue.config.devtools = true;
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: "Hello Vue!"
+            }
+        })
+    </script>
+</body>
+</html>

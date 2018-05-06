@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue 2 | Lesson 10</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/bulma.css">
+    <style type="text/css">
+        body {
+            padding-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="container">
+        <modal v-show="showModal" @close="showModal=false">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        </modal>
+        <button type="button" class="button" @click="showModal=true">Show Modal</button>
+    </div>
+
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <script type="text/javascript" src="./main.js"></script>
+</body>
+</html>

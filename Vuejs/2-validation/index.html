@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue js Lesson 2</title>
+	<link rel="stylesheet" type="text/css" href="../assets/css/main.css">
+</head>
+<body>
+	<div id="app">
+		<form>
+			<span class="error" v-if="!message">You must enter a message</span>
+
+			<textarea v-model="message"></textarea>
+			
+			<button type="submit" v-show="message">Submit</button>
+		</form>
+		<pre>
+			{{ $data | json }}
+		</pre>
+	</div>
+	<script src="../assets/js/vue.min.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		new Vue({
+			el: '#app',
+			data: {
+				message: '',
+
+			},
+		});
+	</script>
+</body>
+</html>
